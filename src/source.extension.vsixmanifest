@@ -3,7 +3,7 @@
   <Metadata>
     <Identity Id="MakeCommands.Amadeusz Wieczorek.e0a03743-8c6c-4599-8058-d1f43675c276" Version="1.0" Language="en-US" Publisher="Amadeusz Wieczorek" />
     <DisplayName>MakeCommands</DisplayName>
-    <Description>Empty VSIX Project.</Description>
+    <Description xml:space="preserve">Sends keys to the editor</Description>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />
@@ -17,5 +17,6 @@
   </Prerequisites>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
   </Assets>
 </PackageManifest>

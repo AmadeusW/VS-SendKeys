@@ -15,6 +15,7 @@ using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.Win32;
+using EnvDTE;
 
 namespace MakeCommands
 {
@@ -69,6 +70,7 @@ namespace MakeCommands
         {
             ControlWindowCommand.Initialize(this);
             base.Initialize();
+            VisualStudioModule.Initialize((DTE)GetService(typeof(DTE)));
         }
 
         #endregion

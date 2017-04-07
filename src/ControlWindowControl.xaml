@@ -9,9 +9,23 @@
              d:DesignHeight="300" d:DesignWidth="300"
              Name="MyToolWindow">
     <Grid>
-        <StackPanel Orientation="Vertical">
-            <TextBlock Margin="10" HorizontalAlignment="Center">ControlWindow</TextBlock>
-            <Button Content="Click me!" Click="button1_Click" Width="120" Height="80" Name="button1"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+            <TextBlock Margin="0 6 0 2">Keys:</TextBlock>
+            <TextBox Name="keysBox"></TextBox>
+            <TextBlock Margin="0 6 0 2">Delay:</TextBlock>
+            <TextBox Name="delayBox"></TextBox>
         </StackPanel>
+        <Button Grid.Column="1" Grid.Row="2" Content="Run" Click="runButton_Click" Width="120" Name="runButton"/>
     </Grid>
 </UserControl>
