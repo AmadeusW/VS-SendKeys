@@ -208,7 +208,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Users\amwieczo\Documents\GitHub\VSEmbed\WpfSendKeys\WpfSendKeys.csproj">
+    <ProjectReference Include="..\lib\WpfSendKeys\WpfSendKeys.csproj">
       <Project>{e9fcd3ae-dc02-478b-854a-b287aa96e155}</Project>
       <Name>WpfSendKeys</Name>
     </ProjectReference>
