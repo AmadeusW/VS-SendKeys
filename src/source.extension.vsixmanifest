@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="MakeCommands.Amadeusz Wieczorek.e0a03743-8c6c-4599-8058-d1f43675c276" Version="1.0" Language="en-US" Publisher="Amadeusz Wieczorek" />
-    <DisplayName>MakeCommands</DisplayName>
-    <Description xml:space="preserve">Sends keys to the editor</Description>
+    <Identity Id="SendKeys.Amadeusz Wieczorek.e0a03743-8c6c-4599-8058-d1f43675c276" Version="1.0" Language="en-US" Publisher="Amadeusz Wieczorek" />
+    <DisplayName>Send Keys</DisplayName>
+    <Description xml:space="preserve">Sends keys to the most recently focused editor.</Description>
+    <Tags>debugging</Tags>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />
