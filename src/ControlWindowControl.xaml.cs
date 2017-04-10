@@ -25,28 +25,70 @@ namespace MakeCommands
             this.InitializeComponent();
         }
 
-        private void runButton_Click(object sender, RoutedEventArgs e)
+        private void run()
         {
             var stringToType = keysBox.Text;
             int delay;
+            int subsequentDelay;
             if (!Int32.TryParse(delayBox.Text, out delay))
             {
                 delay = 0;
             }
+            if (!Int32.TryParse(subsequentDelayBox.Text, out subsequentDelay))
+            {
+                subsequentDelay = 0;
+            }
 
-            Task.Run(async () => {
-
+            Task.Run(async () => 
+            {
+                bool firstRun = true;
                 foreach (var character in stringToType)
                 {
-                    if (delay > 0)
-                    {
-                        await Task.Delay(delay);
-                    }
                     runButton.Dispatcher.BeginInvoke((Action)(() => {
                         VisualStudioModule.ExecuteCommand("Type", character.ToString());
                     }));
+                    if (firstRun && delay > 0)
+                    {
+                        await Task.Delay(delay);
+                        firstRun = false;
+                    }
+                    else if (!firstRun && subsequentDelay > 0)
+                    {
+                        await Task.Delay(subsequentDelay);
+                    }
                 }
             });
+        }
+
+        private void runButton_Click(object sender, RoutedEventArgs e)
+        {
+            run();
+        }
+        private void keysBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Return)
+            {
+                e.Handled = true;
+                run();
+            }
+        }
+
+        private void delayBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Return)
+            {
+                e.Handled = true;
+                run();
+            }
+        }
+
+        private void subsequentDelayBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Return)
+            {
+                e.Handled = true;
+                run();
+            }
         }
     }
 }
