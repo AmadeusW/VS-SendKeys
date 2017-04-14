@@ -11,6 +11,7 @@ namespace MakeCommands
     using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Input;
 
     /// <summary>
     /// Interaction logic for ControlWindowControl.
@@ -36,7 +37,7 @@ namespace MakeCommands
             }
             if (!Int32.TryParse(subsequentDelayBox.Text, out subsequentDelay))
             {
-                subsequentDelay = 0;
+                subsequentDelay = delay;
             }
 
             Task.Run(async () => 
@@ -89,6 +90,16 @@ namespace MakeCommands
                 e.Handled = true;
                 run();
             }
+        }
+
+        private void delayBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            delayBox.SelectAll();
+        }
+
+        private void subsequentDelayBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            subsequentDelayBox.SelectAll();
         }
     }
 }

@@ -25,8 +25,8 @@
             <TextBox Name="keysBox" KeyDown="keysBox_KeyDown"></TextBox>
             <TextBlock Margin="0 6 0 2">Delay of first and subsequent characters:</TextBlock>
             <StackPanel Orientation="Horizontal">
-                <TextBox Width="70" Margin="0 0 10 0" Name="delayBox" KeyDown="delayBox_KeyDown">0</TextBox>
-                <TextBox Width="70" Margin="0 0 10 0" Name="subsequentDelayBox" KeyDown="subsequentDelayBox_KeyDown">0</TextBox>
+                <TextBox Width="70" Margin="0 0 10 0" Name="delayBox" KeyDown="delayBox_KeyDown" GotFocus="delayBox_GotFocus">0</TextBox>
+                <TextBox Width="70" Margin="0 0 10 0" Name="subsequentDelayBox" KeyDown="subsequentDelayBox_KeyDown" GotFocus="subsequentDelayBox_GotFocus"></TextBox>
                 <TextBlock>ms</TextBlock>
             </StackPanel>
         </StackPanel>
